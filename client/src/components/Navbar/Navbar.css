@@ -1,0 +1,84 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500&family=Raleway:ital,wght@0,300;0,400;0,700;1,800&display=swap');
+
+
+.main-nav{
+    align-items: center;
+    min-height:80px;
+    width:100%;
+    margin:0% auto;
+    position:fixed;
+    z-index: 5;
+    top:0%;
+    left:0%;      
+}
+.navbar{
+    align-items: center;   
+    min-height: 80px;
+    min-width: 100%;
+    display: flex;
+    float: left;
+    justify-content: space-between;
+    border-bottom: solid 3px rgb(244, 244, 244);
+}
+.nav-logo{
+    margin-left:50px;
+    margin-top:-10px;
+    text-decoration: none;
+}
+.nav-text{   
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-decoration: none;
+    margin-left: -20px;
+    z-index:1;
+    margin-top: -55px;
+    letter-spacing: .2rem;
+    font-size: 30px;
+    text-transform:uppercase;
+    font-weight: 300;
+    color:black;
+}
+.Main-icon{
+    z-index: -1;
+    margin-left:20px;
+}
+.navbar form{
+    margin-left: -50px;
+    position: relative;
+}
+.navbar form input{
+    font-family:'Trebuchet MS', sans-serif;   
+    min-width: 30%;
+    margin:0;
+    padding:15px 150px 15px 40px;
+    border:none;
+    border-radius: 50px;
+    background-color:rgb(240, 240, 240) ;
+}
+.navbar form input:focus{
+    outline: none;
+}
+.navbar .input-icon{
+    position: absolute;
+    top:10px;
+    left:10px;
+    opacity: 80%;
+}
+.navbar .icon1{
+    margin-left: -50px;
+    background-color: rgb(240, 240, 240);
+    padding:10px;
+    border-radius: 50px;
+}
+.navbar .icon2{
+    margin-left: -150px;
+    background-color: rgb(240, 240, 240);
+    padding:10px;
+    border-radius: 50px;
+}
+.navbar .icon3{
+    margin-left: -250px;
+    background-color: rgb(240, 240, 240);
+    padding:10px;
+    border-radius: 50px;
+}
