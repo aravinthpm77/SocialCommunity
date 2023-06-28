@@ -5,7 +5,7 @@ import S_Logo from '../../assets/search.png'
 import './Navbar.css'
 const Navbar=()=>{
 
-    var User=1
+    
 
 
 
@@ -27,7 +27,7 @@ const Navbar=()=>{
                     <img src="https://img.icons8.com/fluency-systems-regular/42/marker--v1.png" alt='' width='32' className="icon2"/>
                 </Link>
                 <Link to='/' >
-                    <img src="https://img.icons8.com/fluency-systems-regular/42/home.png" alt='' width='32' className="icon3" />
+                    <img src="https://img.icons8.com/fluency-systems-regular/48/user.png" alt='' width='32' className="icon3" />
                 </Link>
 
                 
