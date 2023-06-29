@@ -1,17 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500&family=Raleway:ital,wght@0,300;0,400;0,700;1,800&display=swap');
 
 .left-sidebar{
-    max-width:275px;
+    position: fixed;
+    
+    min-width:300px;
     min-height: 100vh;
     background-color: rgb(245, 245, 245);
     box-shadow: 1px 0px 0px rgb(0,0,0,0.3);
     transform: translateZ(0);
     box-sizing: border-box;
+    
       
 }
 
 .side-nav{
     padding-top: 80px;
+    
    
 }
 

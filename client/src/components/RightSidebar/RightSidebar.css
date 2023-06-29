@@ -1,0 +1,161 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500&family=Raleway:ital,wght@0,300;0,400;0,700;1,800&display=swap');
+.right-sidebar{
+    float:right;
+    
+    min-height: 950px;
+    align-items: center;
+    margin-top: 40px;
+    margin-right: 0px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 15px;
+    width:400px;
+    background-color: rgb(247, 247, 247);
+}
+
+.side-user-details{
+    margin-left: 20px;
+    background-color: white;
+    margin-right: 20px;   
+    border-radius: 30px 30px 0 0;
+}
+.User-Info{
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-bottom: 10px;
+}
+.right-side-links {
+    text-decoration: none;
+    display: flex;
+    
+}
+.User-Details{
+    margin-top:-15px;
+}
+.right-side-links .UserName{
+    font-size: 18px;
+    color:black;
+    font-weight:500;
+    letter-spacing: .1rem;
+}
+.right-side-links .User-Email{
+    font-size: 14px;
+    margin-top: -12px;
+    font-weight: 0;
+    letter-spacing: .04rem;
+    color:#818181;
+}
+
+/*Trend Section */
+
+.trend{
+    padding-bottom: 30px;
+    margin:-13px 20px 20px 20px;
+    background-color: white;
+    padding-left: 20px;
+    border-radius: 0 0 20px 20px;
+    
+    
+}
+.trend-section h2{
+    padding-top: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    letter-spacing: .04rem;
+    
+}
+
+
+.right-sidebar-div-1{
+    padding-top:10px;   
+    padding-right: 20px;
+}
+
+.right-sb-content1{
+    background-color: rgb(247,247,247);
+    padding:5px;
+    border-radius: 10px;
+    
+    
+    
+}
+
+
+
+.content-1-title h4{
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 700;
+    margin-top: 5px;
+    padding-left:7px;
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+.trend-details{
+    transition: .2s;
+    color:#818181;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: -20px;
+    font-weight: 400;
+    font-size: 14px;
+    letter-spacing: .03rem;   
+}
+.trend-details p{
+    margin-top:-5px;
+    margin-bottom: 10px;
+}
+
+.right-sb-content2{
+    background-color: rgb(247,247,247);
+    padding:2px 2px 2px 20px;
+    border-radius: 10px;
+    margin-top: 10px;
+    font-size: 16px;
+    transition: .2s;
+}
+
+.right-sb-content2 h5{
+    margin-top: 10px;
+    font-weight:500;
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color:#919191;
+    letter-spacing: .06rem;
+}
+.trend-content-details{
+    margin-top: -15px;
+    letter-spacing: .04rem;
+}
+
+.content-2-details p{
+    margin-top: -15px;
+    color:#919191;
+    font-size: 15px;
+    letter-spacing: .05rem;
+}
+
+.hashtag ul li{
+    list-style: none;
+    color:rgb(145, 145, 145);
+    letter-spacing: .06rem;
+    margin-bottom: 4px;
+    display: inline;
+    padding-right: 10px;
+    font-size: 14px;
+   
+}
+
+.hashtag ul li:hover{
+    text-decoration: underline;
+    color:#656565
+}
+.copyrights-info {
+    color:rgb(196, 196, 196); 
+    margin-left: 40px;
+    
+}
+
+.copyrights-info p{
+    margin-bottom: -10px;
+    font-size: 15px;
+    font-weight: 400;
+    letter-spacing: .05rem;
+}
