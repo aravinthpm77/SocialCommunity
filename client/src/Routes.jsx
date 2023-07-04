@@ -6,7 +6,7 @@ import Explore from './pages/Explore/Explore'
 const AllRoutes = () =>  {
     return(
         <Routes>
-            <Route exact path='/' element={<Home/>}/>
+            <Route exact path='/home' element={<Home/>}/>
             <Route exact path='/Auth' element={<Auth/>}/>
             <Route exact path='/Explore' element={<Explore/>}/>
         </Routes>

@@ -175,13 +175,13 @@ input[type=file]::file-selector-button {
     background: linear-gradient(135deg,#03a3ffe8,#7300ffd3);
     color:white;
     border-radius: 5px;
-    transition: .3s;
+    transition: width 2s, height 2s, transform 2s;
     letter-spacing: .08rem;
 }
 
 .follow-btn:hover{
     
-    background-color: #0050dbd0;
+    background: linear-gradient(-135deg,#03a3ffe8,#7300ffd3);
 }
 
 .Display-content2{
@@ -194,6 +194,7 @@ input[type=file]::file-selector-button {
 .Display-content2 img{
     margin-left: 20px;
     align-items: center;
+    border-radius: 5px;
     
 }
 .Display-content2 p{

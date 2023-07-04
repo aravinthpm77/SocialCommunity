@@ -1,23 +1,40 @@
-import express, { urlencoded } from 'express'
-import mongoose from 'mongoose'
-import cors from 'cors'
-import PostRoutes from './routes/PostDetails.js'
-const app =express();
+const express = require('express')
+const bodyParser = require('body-parser')
+const mongoose = require('mongoose');
+const cors = require('cors')
+const servicesController = require('./controllers/servicesController')
 
-app.use(express.json({limit:"30mb",extended:true}));
-app.use(express.urlencoded({limit:"30mb",extended:true}));
-app.use(cors());
+const multer = require('multer')
+const upload = multer({ dest: 'uploads/' })
 
-app.get('/',(req,res)=>{
-    res.send("This is Social Community API ")
-})
+const app = express()
 
-app.use('/Post',PostRoutes)
+
+app.use(cors())
+app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.json())
+app.use('/uploads', express.static('uploads'))
+
 
 const PORT =process.env.PORT || 5000
 
 
-const  CONNECTION_URL = "mongodb+srv://admin:admin@social-community.anu6p2k.mongodb.net/?retryWrites=true&w=majority";
-mongoose.connect(CONNECTION_URL,{useNewUrlParser:true,useUnifiedTopology:true})
+const  CONNECTION_URL = 'mongodb+srv://admin:admin@socialcommunity.xvgsu5l.mongodb.net/?retryWrites=true&w=majority';
+mongoose.connect(CONNECTION_URL,{useNewUrlParser:true,useUnifiedTopology:true} )  
     .then(()=>app.listen(PORT,()=>{console.log(`server running on port ${PORT}`)}))
     .catch((err)=>console.log(err.message))
+    
+
+app.get('/hello', (req, res) => {
+    return res.send('Hello')
+})
+
+
+
+app.post('/api/services', upload.single('image'), servicesController.addServices)
+app.get('/api/services', servicesController.getServices)
+
+
+
+
+

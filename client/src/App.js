@@ -1,27 +1,21 @@
-import { BrowserRouter as Router } from 'react-router-dom'
+import { BrowserRouter } from 'react-router-dom'
 import './App.css';
 import Navbar from './components/Navbar/Navbar';
 import AllRoutes from './Routes'
-import { useEffect } from 'react';
-import { fetchAllpost } from './actions/postdetails';
-import { useDispatch } from 'react-redux';
+
+import { Provider } from "react-redux"
+import store from './store'
 function App() {
-
-
-  
-  const dispatch =useDispatch()
-  
-  useEffect(() => {
-    dispatch(fetchAllpost());
-  }, [dispatch]);
-
 
   return (
     <div>
-      <Router>
-        <Navbar/>
-        <AllRoutes/>
-      </Router>
+      <Provider store={store} >
+        <BrowserRouter>
+          <Navbar/>
+          <AllRoutes/>
+        </BrowserRouter>
+      </Provider>
+      
       
     </div>
   );
