@@ -32,7 +32,7 @@ const LeftSidebar =()=>{
                             <p>Home</p>
                               
                         </NavLink>
-                        <NavLink to='/' className="side-nav-links">
+                        <NavLink to='/Explore' className="side-nav-links">
                             <img width='24' height='24' src="https://img.icons8.com/fluency-systems-regular/42/marker--v1.png" alt="Explore" className="nav-icon4"/>
                             <p>Explore</p>
                         </NavLink>
