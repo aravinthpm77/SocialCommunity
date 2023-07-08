@@ -41,18 +41,6 @@ const Auth =()=>{
     }
 
 
-
-
-
-
-
-
-
-
-
-
-
-   
      
     return (
         <section className="auth-section">
