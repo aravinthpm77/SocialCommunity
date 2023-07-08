@@ -20,7 +20,7 @@ const Navbar=()=>{
                     <input type='text' placeholder="Start typing to search..."/>
                     <img src={S_Logo} alt=" " width='28' className="input-icon"/>
                 </form>
-                <Link to='/' >
+                <Link to='/home' >
                     <img src="https://img.icons8.com/fluency-systems-regular/42/home.png" alt='' width='32' className="icon1" />
                 </Link>
                 <Link to='/' >
