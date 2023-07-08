@@ -1,0 +1,115 @@
+.auth-section{
+    margin-top: 80px;
+    min-height: 90vh;
+    display:flex;
+    justify-content: center;
+    align-items:center;
+    background-image: url("../../assets/bg1_b.jpg");
+    background-size: cover;
+    display: flex;
+
+    
+}
+.auth-img{
+    float:left;
+    border-radius: 30px 0px 0px 30px;
+}
+.auth-container{
+    
+    box-shadow: 0px 7px 17px 6px rgba(0, 0, 0, 0.2) ,0px 4px 6px rgba(0, 0, 0, 0.2);
+    min-width:20%;
+    background-color: rgba(255, 255, 255, 0.6) ;
+    backdrop-filter: blur(5px);   
+    border-radius: 30px;
+    
+}
+.auth-container form .Log-text{
+    margin-left: 60px;
+    font-size: 30px;
+    text-transform: uppercase;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 500;
+    letter-spacing: .3rem;
+}
+.auth-container form{
+    max-width: 400px;
+    margin-left: 30px;
+    float:right;
+    display: grid;
+    padding-top: 30px;
+    min-width:350px;
+    padding-right:30px;
+}   
+
+.auth-container form img{
+    margin-bottom: 10px;
+    margin-top:-20px;
+    margin-left: 50px;
+}
+
+.auth-container form label input{
+    padding: 15px 0px 15px 30px;
+    width:calc(70%);
+    margin-bottom:20px;
+    margin-left: 30px;
+    border-radius:50px ;
+    border:none;
+    font-size: 13px ;
+}
+
+
+.auth-container form label input:focus{
+    outline: none;
+}
+
+
+.auth-container form label .pw-p{
+    font-size: 13px;
+    margin-top: -10px;
+    margin-left: 15px;
+    color:#707070;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.auth-container form label .fp-p{
+    margin-left: 220px;
+    margin-top:-5px;
+    margin-bottom: 15px;
+    font-size: 15px;
+    color: #5d5d5d;
+    transition: .2s;
+}
+.auth-container form label .fp-p:hover{
+    color:#424242
+}
+
+.handle-switch-btn{
+    cursor: pointer;
+    border:none;
+    background-color: transparent;
+    color:black;
+    margin-top: -10px;
+}
+
+.auth-btn{
+    cursor: pointer;
+    padding:10px 10px 10px 10px;
+    border:none;
+    background-color: #585858;
+    color:white;
+    text-transform: uppercase;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 17px;
+    letter-spacing: .2rem;
+    transition: .2s;
+}
+
+.auth-btn:hover{
+    background-color: #4d4d4d;
+}
+
+
+.auth-container form .footer{
+    margin-top: 30px;
+    color:#494949;
+    font-size: 14px;
+}

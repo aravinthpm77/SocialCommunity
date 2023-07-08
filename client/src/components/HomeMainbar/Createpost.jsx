@@ -22,7 +22,6 @@ const Createpost = () =>{
 
 
     const handleClick = () => {
-        console.log("Hello")
         console.log(title,  image, 19)
 
         const formData = new FormData()
@@ -68,7 +67,7 @@ const Createpost = () =>{
                             <textarea name="title" onChange={handleChange} id="ask-post-title" cols='50' rows='6' placeholder="What's on your mind"></textarea>
                             
                             <img width="30" height="30" className="img-upload" src="https://img.icons8.com/fluency-systems-regular/48/FF0000/full-image.png" alt=""/>
-                            <input type="file" accept="image/* , video/*" onChange={(e) => setImage(e.target.files[0])}/>
+                            <input type="file" accept="image/* ,image/png, video/*" onChange={(e) => setImage(e.target.files[0])}/>
                             
                             <button className="upload-submit"  type="submit">Submit</button>
                         </form>

@@ -12,7 +12,7 @@ const Navbar=()=>{
     return (
         <nav className='main-nav'>
             <div className='navbar'>
-                <Link to='/' className="nav-logo">
+                <Link to='/home' className="nav-logo">
                     <img src={Logo} alt="logo" width="64" className="Main-icon"/>
                     <div className="nav-text">Soc alo</div>
                 </Link>
@@ -26,7 +26,7 @@ const Navbar=()=>{
                 <Link to='/' >
                     <img src="https://img.icons8.com/fluency-systems-regular/42/marker--v1.png" alt='' width='32' className="icon2"/>
                 </Link>
-                <Link to='/' >
+                <Link to='/Auth' >
                     <img src="https://img.icons8.com/fluency-systems-regular/48/user.png" alt='' width='32' className="icon3" />
                 </Link>
 
