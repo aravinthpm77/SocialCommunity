@@ -1,9 +1,16 @@
-import React from "react";
+import React,{useEffect} from "react";
 import { NavLink } from "react-router-dom";
 import  Trend from './Trend'
 import './RightSidebar.css'
 import Hashtags from './Hashtags'
+import { useDispatch, useSelector } from "react-redux";
+
 const RightSidebar =()=>{
+
+    const state = useSelector(state => state.authReducer)
+    console.log(state, 9)
+    
+
     return (
         <div className='right-sidebar'>
             <div className="side-nav">

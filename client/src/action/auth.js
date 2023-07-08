@@ -6,7 +6,7 @@ export const signup=(authData,navigate)=> async (dispatch) =>{
         const {data}=await api.signUP(authData)
         dispatch({type:'AUTH',data})
         dispatch(setCurrentUser(JSON.parse(localStorage.getItem('Profile'))))
-        navigate('/')
+        navigate('/home')
     }catch(error){
         console.log(error)
     }

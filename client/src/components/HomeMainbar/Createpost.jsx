@@ -5,11 +5,11 @@ import { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
 const Createpost = () =>{
     
-    
+    const User=useSelector((state)=>(state.currentUserReducer))
     const navigate = useNavigate()
     const [title, setTitle] = useState('')
     const [image, setImage] = useState('')
-
+    console.log(User)
     useEffect(() => {
         if (!localStorage.getItem('token')) {
             navigate('/home')
@@ -22,28 +22,41 @@ const Createpost = () =>{
 
 
     const handleClick = () => {
-        console.log(title,  image, 19)
-
-        const formData = new FormData()
-        formData.append('title', title)
-        formData.append('image', image)
-        
-        axios.post('http://localhost:5000/api/services',
-            formData,
-            {
-                headers: { 'Authorization': localStorage.getItem('token') }
+        if(User===null){
+            alert("Login or SignUp to Answer")
+            navigate('/Auth')
+        }
+        else{
+            if((!title && !image)||(!title && image)||(title && !image)){
+                alert('Server needs both title and image')
             }
-        )
-            .then((res) => {
-                console.log(res.data)
+            else{
+                console.log(title,  image, 19)
 
-                if (res.data.code === 403 && res.data.message === 'Token Expired') {
-                    localStorage.setItem('token', null)
-                }
-            })
-            .catch(err => {
-                console.log(err, "err")
-            })
+                const formData = new FormData()
+                formData.append('title', title)
+                formData.append('image', image)
+                
+                axios.post('http://localhost:5000/api/services',
+                    formData,
+                    {
+                        headers: { 'Authorization': localStorage.getItem('token') }
+                    }
+                )
+                    .then((res) => {
+                        console.log(res.data)
+        
+                        if (res.data.code === 403 && res.data.message === 'Token Expired') {
+                            localStorage.setItem('token', null)
+                        }
+                    })
+                    .catch(err => {
+                        console.log(err, "err")
+                    })
+            }
+            
+        }
+        
     }
 
 
