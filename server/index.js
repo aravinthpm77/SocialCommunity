@@ -36,6 +36,6 @@ app.get('/api/services', servicesController.getServices)
 
 app.post('/user/signup',adminController.addAdmins )
 app.post('/user/login',adminController.LoginAdmins)
-
+app.get('/user/signup',adminController.getAdmins)
 
 

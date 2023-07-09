@@ -21,18 +21,18 @@ const HomeMainbar =()=>{
     const state = useSelector(state => state.serviceReducer)
     console.log(state, 9)
 
-    // const [data, setData] = useState([])
+    const [data, setData] = useState([])
     const [filter, setFilter] = useState('')
 
     useEffect(() => {
-        // axios.get('http://localhost:5000/api/services')
-        //     .then(res => {
-        //         console.log(res.data)
-        //         setData(res.data.data)
-        //     })
-        //     .catch(err => {
-        //         console.log(err)
-        //     })
+        axios.get('http://localhost:5000/api/services')
+            .then(res => {
+                console.log(res.data)
+                setData(res.data.data)
+            })
+            .catch(err => {
+                console.log(err)
+            })
 
         dispatch(getServices())
 
@@ -91,7 +91,7 @@ const HomeMainbar =()=>{
                                         </div>
                                         
                     
-                                </div>
+                                    </div>
                                 )
                             })
                             : 'No Data Found'
