@@ -136,28 +136,26 @@ input[type=file]::file-selector-button {
 }
 
 .Display-content1{
-    padding-left: 30px;
-    padding-top: 10px;
+    padding-left: 20px;
+    justify-content: space-between;
     padding-right: 10px;
+    
     display: flex;
     border-bottom: solid 1px #888888b1;
 }
 .Display-content1 h3{
+    
+    margin-right: -100px;
     font-size: 19px;
     font-weight: 300;
+    margin-left: 20px;  
 }
 .Display-content1 p{
     font-size: 15px;
-    margin-top:23px;
-    margin-left:10px;
     color:#6d6d6d;
 }
 .share-bn{
     cursor: pointer;
-    margin-left: -10px;
-    margin-top: 13px;
-    margin-bottom: 15px;
-    padding:10px 25px 10px 25px;
     font-size: 15px;
     border:none;
     background-color: transparent;
@@ -166,10 +164,10 @@ input[type=file]::file-selector-button {
     letter-spacing: .07rem;
 }
 .follow-btn{
-    margin-left: 200px;
-    margin-top:15px;
-    margin-bottom: 15px;
-    padding:10px 20px 10px 20px;
+    margin-left: 400px;
+    margin-top:20px;
+        
+    padding:13px 20px 13px 20px;
     font-size: 14px;
     border:none;
     background: linear-gradient(135deg,#03a3ffe8,#7300ffd3);

@@ -28,10 +28,10 @@ const authReducer=(state={data:[],isLoading:false},action)=>{
             return {isLoading:true,...state,data:action?.data}
 
         case 'GET_ADMINS_COMPLETED':
-            localStorage.getItem('Profile',JSON.stringify({...action?.data}))
+            
             return {isLoading:false,...state,data:action?.data}
         case 'GET_ADMINS_FAILED':
-            localStorage.getItem('Profile',JSON.stringify({...action?.data}))
+            
             return {
                 
                 isLoading: false,

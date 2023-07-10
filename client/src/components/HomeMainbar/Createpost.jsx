@@ -1,6 +1,6 @@
 import axios from 'axios'
 import {Link,useNavigate} from 'react-router-dom';
-import {useDispatch} from 'react-redux'
+
 import { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
 const Createpost = () =>{
@@ -9,7 +9,7 @@ const Createpost = () =>{
     const navigate = useNavigate()
     const [title, setTitle] = useState('')
     const [image, setImage] = useState('')
-    console.log(User)
+    
     useEffect(() => {
         if (!localStorage.getItem('token')) {
             navigate('/home')
@@ -36,7 +36,7 @@ const Createpost = () =>{
                 const formData = new FormData()
                 formData.append('title', title)
                 formData.append('image', image)
-                
+                formData.append('UserPosted', User.result.name)
                 axios.post('http://localhost:5000/api/services',
                     formData,
                     {
@@ -80,7 +80,7 @@ const Createpost = () =>{
                             <textarea name="title" onChange={handleChange} id="ask-post-title" cols='50' rows='6' placeholder="What's on your mind"></textarea>
                             
                             <img width="30" height="30" className="img-upload" src="https://img.icons8.com/fluency-systems-regular/48/FF0000/full-image.png" alt=""/>
-                            <input type="file" accept="image/* ,image/png, video/*" onChange={(e) => setImage(e.target.files[0])}/>
+                            <input type="file" accept="image/* ,image/png, video/*" multiple = "true" onChange={(e) => setImage(e.target.files[0])}/>
                             
                             <button className="upload-submit"  type="submit">Submit</button>
                         </form>

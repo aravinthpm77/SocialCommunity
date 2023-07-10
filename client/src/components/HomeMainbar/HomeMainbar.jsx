@@ -5,7 +5,7 @@ import { NavLink } from "react-router-dom";
 import Createpost from "./Createpost";
 import { useDispatch, useSelector } from "react-redux";
 import { getServices } from "../../reducers/serviceReducer";
-
+import moment from 'moment'
 const HomeMainbar =()=>{
     const [isLike,setLike]=useState(false)
     const [isFollow,setIsFollow]=useState(false)
@@ -19,8 +19,8 @@ const HomeMainbar =()=>{
     const istext=1
     const dispatch = useDispatch()
     const state = useSelector(state => state.serviceReducer)
-    console.log(state, 9)
-
+    
+    
     const [data, setData] = useState([])
     const [filter, setFilter] = useState('')
 
@@ -28,6 +28,7 @@ const HomeMainbar =()=>{
         axios.get('http://localhost:5000/api/services')
             .then(res => {
                 console.log(res.data)
+                
                 setData(res.data.data)
             })
             .catch(err => {
@@ -37,6 +38,8 @@ const HomeMainbar =()=>{
         dispatch(getServices())
 
     }, [])
+
+
 
     return (
         <div class='main-bar'>
@@ -48,7 +51,7 @@ const HomeMainbar =()=>{
                     <h1 className="Home-Header">Home</h1>
                     
                     <div className="link-main">
-                        <NavLink to='/' className='a1'>For You</NavLink>
+                        <NavLink to='/home' className='a1'>For You</NavLink>
                         <NavLink to='/' className='a2'>Following</NavLink>
                         
                     </div>
@@ -67,7 +70,7 @@ const HomeMainbar =()=>{
                         state.servicesData
                             .sort((a, b) => a.price - b.price)
                             .filter(item => {
-                                return item.title.toLowerCase().includes(filter.toLowerCase()) || item.description.toLowerCase().includes(filter.toLowerCase())
+                                return item.title.toLowerCase().includes(filter.toLowerCase()) || item.postedOn.toLowerCase().includes(filter.toLowerCase())
                             })
                             .map((serviceItem, serviceIndex) => {
                                 return (
@@ -76,18 +79,22 @@ const HomeMainbar =()=>{
                                         
                                     
                                         <div className="Display-content1">
-                                            { <h3>Aravinth</h3>   }
-                                            <p>30 mins</p>
-                                            <button type="button" className='share-bn'>share</button>
+                                            { <h3>{serviceItem?.UserPosted} </h3>   }
+                                            
                                             <button type="button" className='follow-btn'  onClick={handleSwitch} >{isFollow? 'Follow':'UnFollow'}</button>
                                         </div>
                                         <div className='Display-content2'>
+                                        <button type="button" className='share-bn'>share</button>
                                             {
                                                 istext===null ? <p></p>: <p>{serviceItem?.title}</p>
                                                 
                                             }
                                             <img width="50%" height="50%" alt="img" src={`http://localhost:5000/${serviceItem?.imageUrl}` } />
-                        
+                                            
+                                            {
+                                             <p>{moment(serviceItem?.postedOn).fromNow()}</p>
+                                            }
+                                            
                                         </div>
                                         
                     

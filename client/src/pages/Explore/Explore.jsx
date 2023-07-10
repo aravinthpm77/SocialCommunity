@@ -7,7 +7,7 @@ const Explore = () => {
     const fetchUser = async () => {
       try {
         const token = localStorage.getItem('authToken'); // Assuming you stored the authentication token in local storage
-        const response = await fetch('/api/user', {
+        const response = await fetch('http://localhost:3000/user/signup', {
           headers: {
             Authorization: `Bearer ${token}`
           }
@@ -19,9 +19,11 @@ const Explore = () => {
       }
     };
 
+
     fetchUser();
   }, []);
 
+  
   return (
     <div>
       {user ? (

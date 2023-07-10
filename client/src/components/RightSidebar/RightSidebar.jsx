@@ -1,33 +1,21 @@
-import React,{useEffect,useState} from "react";
+import React,{useEffect} from "react";
 import { NavLink ,} from "react-router-dom";
 import  Trend from './Trend'
-import axios from "axios"
 import './RightSidebar.css'
 import Hashtags from './Hashtags'
 import { useDispatch, useSelector } from "react-redux";
-import { getAdmins } from "../../reducers/auth";
-
+import {setCurrentUser} from '../../action/currentuser'
 const RightSidebar =()=>{
-    const dispatch =useDispatch()
     
+    const dispatch =useDispatch()
+    const User = useSelector((state)=> state.currentUserReducer)
     
     
     useEffect(()=>{
-        // axios.get('http://localhost:5000/user/signup')
-        //     .then(res => {
-        //         console.log(res.data)
-        //         setData(res.data.data)
-        //     })
-        //     .catch(err => {
-        //         console.log(err)
-        //     })
-
-        dispatch(getAdmins())
-        
-    })
-    const state = useSelector(state => state.authReducer)
-    // const [data, setData] = useState([])
-    console.log(state?.data.name)
+        dispatch(setCurrentUser(JSON.parse(localStorage.getItem('Profile'))))
+    },[dispatch])
+   
+    
 
     return (
         
@@ -39,8 +27,8 @@ const RightSidebar =()=>{
                             <img  width='30' height='30' src="https://img.icons8.com/small/42/user.png" className="nav-icon5" alt="User"/>
                            
                             <div  className="User-Details">
-                                <p className="UserName">Aravinth</p>
-                                <p className="User-Email">Aravinth2003@gmail.com</p>
+                                <p className="UserName">{User?.result?.name}</p>
+                                <p className="User-Email">{User?.result?.email}</p>
                             </div>
                             
                         </NavLink> 

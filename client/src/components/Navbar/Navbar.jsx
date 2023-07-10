@@ -12,7 +12,7 @@ const Navbar=()=>{
     return (
         <nav className='main-nav'>
             <div className='navbar'>
-                <Link to='/home' className="nav-logo">
+                <Link to='/' className="nav-logo">
                     <img src={Logo} alt="logo" width="64" className="Main-icon"/>
                     <div className="nav-text">Soc alo</div>
                 </Link>
@@ -20,7 +20,7 @@ const Navbar=()=>{
                     <input type='text' placeholder="Start typing to search..."/>
                     <img src={S_Logo} alt=" " width='28' className="input-icon"/>
                 </form>
-                <Link to='/home' >
+                <Link to='/' >
                     <img src="https://img.icons8.com/fluency-systems-regular/42/home.png" alt='' width='32' className="icon1" />
                 </Link>
                 <Link to='/' >

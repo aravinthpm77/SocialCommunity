@@ -1,6 +1,6 @@
 const adminModel = require('../models/adminModel')
 const jwt = require('jsonwebtoken')
-
+const bcrypt = require('bcryptjs')
 module.exports.getAdmins = async (req, res) => {
     const _data = await adminModel.find({})
     if (_data) {
@@ -11,38 +11,30 @@ module.exports.getAdmins = async (req, res) => {
 }
 
 module.exports.addAdmins = async (req, res) => {
-    
+    const {name,email,password}=req.body;
     try{ 
-        const name=req.body.name
-        
-        const email =req.body.email
-        const password =req.body.password
-        const emailexist =await adminModel.findOne({email})
-        console.log(name,email,password,emailexist)
-        if(emailexist){
-            console.log(emailexist)
+        console.log(name,email,password,"AdminCon")
+        const emailexists =await adminModel.findOne({email})
+        if(emailexists){
+            console.log(emailexists)
             return res.send({code:404,message:"User Already Exists"})
             
         }
-        if (!name || !email || !password){
-            return res.send({code:400,message:"Bad Request : Incomplete Submition ."})
-        }
-        const newUser =new adminModel({name:name,email:email,password:password})
+        const hashedPassword =await bcrypt.hash(password,12)
+        const newUser =new adminModel({name:name,email:email,password:hashedPassword})
         const success =await newUser.save()
         const token=await jwt.sign({email:newUser.email,id:newUser._id})
+        res.send({code:200,result:newUser,token})
 
 
         if (success) {
             res.send({ code: 200, message: 'success', })
-            if (token){
-                return res.send({code:200,result:newUser,token})
-            }
         } else {
-            return res.send({ code: 500, message: 'Service error' })
+            return res.send({ code: 500, message: 'Service error in AdminController' })
         }
     }
     catch(err){
-        res.send({code:500,message:"Internal Server Error ,21AC"})
+        res.send({code:500,message:"Internal Server Error AdminCon ,21AC"})
     }
     
 }
@@ -60,20 +52,15 @@ module.exports.LoginAdmins = async(req,res) => {
         }
         else{
             console.log(emailexists.password)
-            const ispasscrt = await compare(emailexists.password,password)
-            if (!ispasscrt){
-                res.redirect('/')
-                return res.send({code:400,message:"Password Wrong",err})
+            const ispasscrt = await bcrypt.compare(emailexists.password,password)
+            if (ispasscrt === true){
+                return res.redirect('/home')
+                
             }    
-            else{
-                const _token =await jwt.sign({ ...emailexists},"test",{expiresIn:'1h'})
-                return res.send({
-                    code:200,
-                    message:"Success",
-                    token:_token,
-                    type:existinguser.type
-                })
-            }   
+            
+            const _token =await jwt.sign({email:emailexists.email , id:emailexists._id},"test",{expiresIn:'1h'})
+            return res.send({result:emailexists,_token })
+              
         
             
     
@@ -85,7 +72,7 @@ module.exports.LoginAdmins = async(req,res) => {
 
     }
     catch(err){
-        res.send({code:500,message:"Something Went Wrong",err})
+        res.send({code:500,message:"Something Went Wrong AdminC",err})
 
     }
 }
