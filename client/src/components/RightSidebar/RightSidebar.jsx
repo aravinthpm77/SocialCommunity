@@ -1,4 +1,4 @@
-import React,{useEffect} from "react";
+import React,{useEffect,useState} from "react";
 import { NavLink ,} from "react-router-dom";
 import  Trend from './Trend'
 import './RightSidebar.css'
@@ -15,11 +15,24 @@ const RightSidebar =()=>{
         dispatch(setCurrentUser(JSON.parse(localStorage.getItem('Profile'))))
     },[dispatch])
    
+    const [fix,setFix] = useState(false)
+
+    function setFixedSidebar(){
+    
+        if(window.scrollY >=400){
+            setFix(true)
+        }
+        else{
+            setFix(false)
+        }
+    }
+    
+    window.addEventListener("scroll",setFixedSidebar)
     
 
     return (
         
-            <div className='right-sidebar'>
+        <div className={fix ? 'right-sidebar fixed' : "right-sidebar"}>
             <div className="side-nav">
                 <div className="side-user-details">
                     <div className="User-Info">

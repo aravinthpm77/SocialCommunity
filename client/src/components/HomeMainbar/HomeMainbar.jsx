@@ -40,6 +40,8 @@ const HomeMainbar =()=>{
     }, [])
 
 
+    
+
 
     return (
         <div class='main-bar'>
@@ -52,7 +54,7 @@ const HomeMainbar =()=>{
                     
                     <div className="link-main">
                         <NavLink to='/home' className='a1'>For You</NavLink>
-                        <NavLink to='/' className='a2'>Following</NavLink>
+                        <NavLink to='/home' className='a2'>Following</NavLink>
                         
                     </div>
                 </div>
@@ -79,21 +81,30 @@ const HomeMainbar =()=>{
                                         
                                     
                                         <div className="Display-content1">
+                                            <img width="30" height="30" className='User-photo-content' src="https://img.icons8.com/fluency-systems-filled/48/user.png" alt="user"/>
+                                           
                                             { <h3>{serviceItem?.UserPosted} </h3>   }
                                             
                                             <button type="button" className='follow-btn'  onClick={handleSwitch} >{isFollow? 'Follow':'UnFollow'}</button>
                                         </div>
                                         <div className='Display-content2'>
-                                        <button type="button" className='share-bn'>share</button>
+                                            <div className='display-user-content'>
+                                                
+                                                <img width="30" height="30" className="share-bn" src="https://img.icons8.com/material-sharp/24/share-rounded.png" alt="share-rounded"/>
+                                                {
+                                                <p>{moment(serviceItem?.postedOn).format("DD-MMMM")}</p>
+                                                
+                                                }
+                                                <p>{moment(serviceItem?.postedOn).fromNow()}</p>
+                                            </div>
+                                            
                                             {
                                                 istext===null ? <p></p>: <p>{serviceItem?.title}</p>
                                                 
                                             }
-                                            <img width="50%" height="50%" alt="img" src={`http://localhost:5000/${serviceItem?.imageUrl}` } />
+                                            <img width="60%" height="60%" alt="img" src={`http://localhost:5000/${serviceItem?.imageUrl}` } />
                                             
-                                            {
-                                             <p>{moment(serviceItem?.postedOn).fromNow()}</p>
-                                            }
+                                            
                                             
                                         </div>
                                         
