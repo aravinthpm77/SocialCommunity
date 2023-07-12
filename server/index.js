@@ -5,7 +5,22 @@ const cors = require('cors')
 const servicesController = require('./controllers/servicesController')
 const adminController =require('./controllers/adminController')
 const multer = require('multer')
-const upload = multer({ dest: 'uploads/' })
+const upload = multer({ 
+    dest: 'uploads/',
+    fileFilter:function(req,file,cb){
+        var filetypes = /jpeg|jpg|png|mp4/;
+        var mimetype = filetypes.test(file.mimetype); 
+
+        var extname = filetypes.test(path.extname(file.originalname).toLowerCase()); 
+
+        if (mimetype && extname) { 
+            return cb(null, true); 
+        }
+      
+        cb("Error: File upload only supports the " + "following filetypes - " + filetypes); 
+       
+    }
+})
 
 const app = express()
 
@@ -31,7 +46,7 @@ app.get('/hello', (req, res) => {
 
 
 
-app.post('/api/services', upload.single('image'), servicesController.addServices)
+app.post('/api/services', upload.array('image',2), servicesController.addServices)
 app.get('/api/services', servicesController.getServices)
 
 app.post('/user/signup',adminController.addAdmins )

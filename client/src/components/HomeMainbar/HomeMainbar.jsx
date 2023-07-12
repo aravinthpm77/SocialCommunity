@@ -38,16 +38,25 @@ const HomeMainbar =()=>{
         dispatch(getServices())
 
     }, [])
-
-
+    const [fix,setFix] = useState(false)
     
+    function setFixHeader() {
+        if (window.scrollY>=5){
+            setFix(true)
+        }
+        else{
+            setFix(false)
+        }
+    }
+    
+    window.addEventListener("scroll",setFixHeader)
 
 
     return (
         <div class='main-bar'>
-            <Createpost/>
+            
            
-            <div className="main-bar-header">
+            <div className={fix?"main-bar-header fixed":"main-bar-header"}>
                 <div className="Home-header-section">
                     
                     <h1 className="Home-Header">Home</h1>
@@ -59,6 +68,7 @@ const HomeMainbar =()=>{
                     </div>
                 </div>
             </div>
+            <Createpost/>
 
             <div className="flex">
                 {
