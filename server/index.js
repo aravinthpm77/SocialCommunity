@@ -1,10 +1,10 @@
 const express = require('express')
+const router = express.Router()
 const bodyParser = require('body-parser')
 const mongoose = require('mongoose');
 const cors = require('cors')
 const servicesController = require('./controllers/servicesController')
 const adminController =require('./controllers/adminController')
-const path = require('path')
 
 const multer = require('multer')
 
@@ -55,5 +55,3 @@ app.get('/api/services', servicesController.getServices)
 app.post('/user/signup',adminController.addAdmins )
 app.post('/user/login',adminController.LoginAdmins)
 app.get('/user/signup',adminController.getAdmins)
-
-

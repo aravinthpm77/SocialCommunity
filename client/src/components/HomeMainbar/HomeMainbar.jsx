@@ -1,11 +1,17 @@
 import React,{useState,useEffect} from 'react'
 import './HomeMainbar.css'
 import axios from "axios"
-import { NavLink } from "react-router-dom";
+import { NavLink ,useLocation} from "react-router-dom";
 import Createpost from "./Createpost";
 import { useDispatch, useSelector } from "react-redux";
 import { getServices } from "../../reducers/serviceReducer";
-import moment from 'moment'
+import moment from 'moment';
+import copy from 'react-copy-to-clipboard';
+
+
+import mime_type from 'mime'
+
+
 const HomeMainbar =()=>{
     const [isLike,setLike]=useState(false)
     const [isFollow,setIsFollow]=useState(false)
@@ -13,16 +19,18 @@ const HomeMainbar =()=>{
         setIsFollow(!isFollow)
         
     }
-    // const handleLike = ()=>{
-    //     setLike(!isLike)
-    // }
+   
     const istext=1
     const dispatch = useDispatch()
     const state = useSelector(state => state.serviceReducer)
     
+    const location = useLocation()
     
     const [data, setData] = useState([])
     const [filter, setFilter] = useState('')
+
+
+
 
     useEffect(() => {
         axios.get('http://localhost:5000/api/services')
@@ -51,6 +59,27 @@ const HomeMainbar =()=>{
     
     window.addEventListener("scroll",setFixHeader)
 
+
+    const handleShare = () =>{
+        copy()
+    }
+    
+
+  function LikeButton() {
+    const [likes, setLikes] = useState(state.likes);
+    return (
+       <button onClick={() => setLikes(likes + 1)}>
+          {likes} Likes
+       </button>
+      
+    );
+    console.log(likes)
+ }
+
+ const mime_types = mime_type.getType(state.imageUrl)
+
+ const [likes, setLikes] = useState(0);
+   const [liked, setLiked] = useState(false);
 
     return (
         <div class='main-bar'>
@@ -100,7 +129,7 @@ const HomeMainbar =()=>{
                                         <div className='Display-content2'>
                                             <div className='display-user-content'>
                                                 
-                                                <img width="30" height="30" className="share-bn" src="https://img.icons8.com/material-sharp/24/share-rounded.png" alt="share-rounded"/>
+                                                <img width="30" height="30" className="share-bn" onClick={handleShare} src="https://img.icons8.com/material-sharp/24/share-rounded.png" alt="share-rounded"/>
                                                 {
                                                 <p>{moment(serviceItem?.postedOn).format("DD-MMMM")}</p>
                                                 
@@ -112,10 +141,26 @@ const HomeMainbar =()=>{
                                                 istext===null ? <p></p>: <p>{serviceItem?.title}</p>
                                                 
                                             }
-                                            <img width="60%" height="60%" alt="img" src={`http://localhost:5000/${serviceItem?.imageUrl}` } />
+                                            {
+                                                mime_types===/jpeg|jpg|png|mp4/ ?
+                                                <video  width="300" height="200"  controls src={`http://localhost:5000/${serviceItem?.imageUrl}` } ></video> 
+                                                :    <img width="60%" height="60%" alt="img" src={`http://localhost:5000/${serviceItem?.imageUrl}` } />
+                                                
+                                                
+                                                    
+                                                
+                                                
                                             
                                             
-                                            
+                                            }
+                                                                                      
+
+                                           
+
+
+
+
+
                                         </div>
                                         
                     

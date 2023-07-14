@@ -1,5 +1,5 @@
 const servicesModel = require('../models/servicesModel')
-// const userModel = require('../models/userModel')
+
 const jwt = require('jsonwebtoken')
 
 module.exports.getServices = async (req, res) => {
@@ -23,6 +23,7 @@ module.exports.addServices = async (req, res) => {
         const UserPosted =req.body.UserPosted
         const imageUrl = req.file.path
         const userId =req.body.userId
+        
         if (!title || !imageUrl) {
             return res.send({ code: 400, message: 'Bad Request' })
         }
