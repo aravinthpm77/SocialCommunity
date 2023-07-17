@@ -8,4 +8,5 @@ module.exports = mongoose.model('services22', {
     userId:{type:String},
     postedOn:{type:Date,default:Date.now},
     likes:[{type:ObjectId,ref:"User",default:0}],
+    datatype:{type:String,required:true}
 });

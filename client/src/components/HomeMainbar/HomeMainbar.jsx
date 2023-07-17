@@ -141,20 +141,21 @@ const HomeMainbar =()=>{
                                                 istext===null ? <p></p>: <p>{serviceItem?.title}</p>
                                                 
                                             }
+                                            {/* {
+                                                serviceItem?.datatype===('image/jpeg' ||'image/jpg'||'image/png'  ) ?
+                                                <img width="60%" height="60%" alt="img" src={`http://localhost:5000/${serviceItem?.imageUrl}` } />
+                                                :<video controls loop width="300" height="200"   src={`http://localhost:5000/${serviceItem?.imageUrl}` } ></video> 
+                                            
+                                            } */}
                                             {
-                                                mime_types===/jpeg|jpg|png|mp4/ ?
-                                                <video  width="300" height="200"  controls src={`http://localhost:5000/${serviceItem?.imageUrl}` } ></video> 
-                                                :    <img width="60%" height="60%" alt="img" src={`http://localhost:5000/${serviceItem?.imageUrl}` } />
+                                                serviceItem?.datatype===('video/mp4' ) ?
                                                 
-                                                
-                                                    
-                                                
-                                                
-                                            
-                                            
+                                                <video controls loop width="300" height="200"   src={`http://localhost:5000/${serviceItem?.imageUrl}` } ></video> 
+                                                :<img width="60%" height="60%" alt="img" src={`http://localhost:5000/${serviceItem?.imageUrl}` } />
                                             }
-                                                                                      
-
+                                            
+                                            
+                                          
                                            
 
 

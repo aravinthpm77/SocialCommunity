@@ -22,13 +22,15 @@ module.exports.addServices = async (req, res) => {
         const title = req.body.title
         const UserPosted =req.body.UserPosted
         const imageUrl = req.file.path
-        const userId =req.body.userId
-        
+        const userId = req.body.userId
+        const datatype = req.file.mimetype
+        console.log(datatype)
         if (!title || !imageUrl) {
             return res.send({ code: 400, message: 'Bad Request' })
         }
 
-        const newService = new servicesModel({ title: title, imageUrl : imageUrl ,UserPosted : UserPosted ,userId:userId})
+
+        const newService = new servicesModel({ title: title, imageUrl : imageUrl ,UserPosted : UserPosted ,userId:userId,datatype:req.file.mimetype})
 
         const success = await newService.save()
 
