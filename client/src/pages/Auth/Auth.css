@@ -113,3 +113,19 @@
     color:#494949;
     font-size: 14px;
 }
+
+
+
+@media only screen and (max-width:600px){
+       
+    .auth-container{
+        max-width:80% ;
+    }
+    .auth-img{
+        visibility: collapse;
+    }
+    .auth-container form{
+        margin-top:-500px;
+        margin-right: -10px;
+    }
+}

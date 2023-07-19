@@ -86,3 +86,28 @@
     padding:10px;
     border-radius: 50px;
 }
+
+@media only screen and (max-width:600px){
+    .main-nav{
+        align-items: centre;
+        width:100%;
+    }
+    .navbar{
+        
+        max-height:60px;
+
+
+        
+    }
+    .nav-logo{
+        margin-top:-15px;
+        margin-left:70px;
+    }
+
+    .nav-text{
+        font-size:25px;
+    }
+    .navbar form{
+        visibility: hidden;
+    }
+}

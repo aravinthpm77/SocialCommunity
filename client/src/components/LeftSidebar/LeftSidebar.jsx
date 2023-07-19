@@ -8,6 +8,12 @@ const LeftSidebar =()=>{
         <div className='left-sidebar'>
             <nav className="side-nav">
                 <div className="side-nav-container1">
+                    <div  className="toggle-btn">
+                        <span/>
+                        <span/>
+                        <span/>
+                        
+                    </div>
                     <div className="side1-nav-head">
                         <span>New</span> Feeds
                     </div>
