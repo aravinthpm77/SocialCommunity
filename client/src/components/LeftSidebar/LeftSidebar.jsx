@@ -3,17 +3,16 @@ import { NavLink } from "react-router-dom";
 import './LeftSidebar.css'
 const LeftSidebar =()=>{
 
+    
+
+
+    
     var User=1
     return (
         <div className='left-sidebar'>
             <nav className="side-nav">
                 <div className="side-nav-container1">
-                    <div  className="toggle-btn">
-                        <span/>
-                        <span/>
-                        <span/>
-                        
-                    </div>
+                    
                     <div className="side1-nav-head">
                         <span>New</span> Feeds
                     </div>
