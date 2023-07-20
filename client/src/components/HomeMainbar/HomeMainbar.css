@@ -53,12 +53,13 @@
 }
 
 .header-textbox .img-upload{
-    position:absolute;
+    position:relative;
     margin-top: 13px;
 }
 input[type=file]::file-selector-button {
     margin-right: 20px;
-    margin-left: 35px;
+    margin-left: 25px;
+    margin-top: -10px;
     border: none;
     background: linear-gradient(45deg,#ff0303d8,#ff0659d5);
     padding: 10px 20px;
@@ -241,5 +242,77 @@ input[type=file]::file-selector-button {
         margin-left: 0px;
         width:400px;
     }
+    .Create-post{
+        margin-left:20px; 
+        margin-bottom: -10px;   
+    }
+    .header-textbox textarea{
+        padding:10px 0px 0px 10px;
+        border:solid 3px #7373733e;
+        font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        width: 90%; 
+        resize:horizontal; 
+        border-radius: 10px;
+        margin-right:30px;   
+    }
+    input[type=file]::file-selector-button {
+        margin-right: 10px;
+        margin-left: 15px;
+        border: none;
+        background: linear-gradient(45deg,#ff0303d8,#ff0659d5);
+        padding: 10px 20px;
+        border-radius: 10px;
+        color: #fff;
+        margin-top: 10px;
+        cursor: pointer;
+        transition: .4s ease-in-out;
+    }
+
+    .Home-header-section{
+        padding-bottom:10px;
+    }
+    .link-main a{
+        
+        width:50px;  
+        font-size: 20px;
+        color:black;
+        text-decoration: none;
+        padding:20px 30px 10px 76px;
+        justify-content: space-between;
+        transition: .1s ;
+    }
+    .main-bar-header{
+        
+        
+        margin-left: 10px;
+        align-items: center;
+        justify-content: space-between;
+        background-color:white ;
+        backdrop-filter: blur(6px);
+        border-radius: 0px 0px 10px 10px ;
+    }
+    .main-bar-header.fixed{
+        
+        position: fixed;
+        margin-bottom: -30px;
+        margin-left: 20px;
+        align-items: center;
+        justify-content: space-between;
+        background-color: rgba(239, 239, 239, 0.8);
+        backdrop-filter: blur(6px);
+        border-radius: 0px 0px 10px 10px ;
+    }
+    .Display-content1 h3{
+        
+        margin-right: -300px;
+        font-size: 19px;
+        font-weight: 300;
+        
+    }
+    .Home-header-section{
+        
+        padding-bottom:10px;
+    }
 }
+
 

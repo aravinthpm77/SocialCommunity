@@ -91,6 +91,7 @@
     .main-nav{
         align-items: centre;
         width:100%;
+        background-color: rgba(239, 239, 239, 0.8);
     }
     .navbar{
         
