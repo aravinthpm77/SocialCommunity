@@ -1,7 +1,7 @@
 import axios from 'axios'
 import {Link,useNavigate} from 'react-router-dom';
 
-import { useEffect, useState } from 'react'
+    import { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
 const Createpost = () =>{
     
@@ -37,7 +37,7 @@ const Createpost = () =>{
                 formData.append('title', title)
                 formData.append('image', image)
                 formData.append('UserPosted', User.result.name)
-                axios.post('http://localhost:5000/api/services',
+                axios.post('https://react-socialogram.onrender.com/api/services',
                     formData,
                     {
                         headers: { 'Authorization': localStorage.getItem('token') }
