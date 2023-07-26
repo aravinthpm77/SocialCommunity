@@ -33,7 +33,7 @@ const HomeMainbar =()=>{
 
 
     useEffect(() => {
-        axios.get('http://localhost:5000/api/services')
+        axios.get('https://react-socialogram.onrender.com/api/services')
             .then(res => {
                 console.log(res.data)
                 
