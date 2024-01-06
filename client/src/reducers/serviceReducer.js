@@ -5,7 +5,7 @@ export const getServices = () => {
     return async (dispatch) => {
 
         dispatch({ type: 'GET_SERVICES' })
-        const response = await axios.get('http://localhost:5000/api/services')
+        const response = await axios.get('https://react-socialogram.onrender.com/api/services')
         if (response) {
             dispatch({ type: 'GET_SERVICES_COMPLETED', payload: response.data.data })
         }
