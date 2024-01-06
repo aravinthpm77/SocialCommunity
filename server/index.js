@@ -1,4 +1,5 @@
-const express = require('express')
+
+const express = require('express');
 const router = express.Router()
 const bodyParser = require('body-parser')
 const mongoose = require('mongoose');
@@ -34,7 +35,7 @@ app.use(bodyParser.json())
 app.use('/uploads', express.static('uploads'))
 
 
-const PORT =process.env.PORT || 5000
+const PORT =process.env.PORT || "https://react-socialogram.onrender.com";
 
 
 const  CONNECTION_URL = 'mongodb+srv://admin:admin@socialcommunity.xvgsu5l.mongodb.net/?retryWrites=true&w=majority';
@@ -44,7 +45,8 @@ mongoose.connect(CONNECTION_URL,{useNewUrlParser:true,useUnifiedTopology:true} )
     
 
 app.get('/hello', (req, res) => {
-    return res.send('Hello')
+    return res.send('Hello User Admin page')
+    
 })
 
 
@@ -55,3 +57,4 @@ app.get('/api/services', servicesController.getServices)
 app.post('/user/signup',adminController.addAdmins )
 app.post('/user/login',adminController.LoginAdmins)
 app.get('/user/signup',adminController.getAdmins)
+

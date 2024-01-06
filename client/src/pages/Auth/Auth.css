@@ -16,7 +16,7 @@
 }
 .auth-container{
     
-    box-shadow: 0px 7px 17px 6px rgba(0, 0, 0, 0.2) ,0px 4px 6px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 17px 17px 6px rgba(0, 0, 0, 0.2) ,0px 4px 6px rgba(0, 0, 0, 0.2);
     min-width:20%;
     background-color: rgba(255, 255, 255, 0.6) ;
     backdrop-filter: blur(5px);   

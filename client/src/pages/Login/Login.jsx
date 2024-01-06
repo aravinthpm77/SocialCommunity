@@ -55,7 +55,7 @@ const Auth =()=>{
                     </p>
                 </form>
                 
-            </div>
+            </div>  
         </section>
     )
 }

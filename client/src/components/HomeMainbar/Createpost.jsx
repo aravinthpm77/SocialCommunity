@@ -1,7 +1,6 @@
 import axios from 'axios'
 import {Link,useNavigate} from 'react-router-dom';
-
-    import { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
 const Createpost = () =>{
     
@@ -49,6 +48,7 @@ const Createpost = () =>{
                         if (res.data.code === 403 && res.data.message === 'Token Expired') {
                             localStorage.setItem('token', null)
                         }
+                        navigate('/home')
                     })
                     .catch(err => {
                         console.log(err, "err")

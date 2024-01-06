@@ -4,7 +4,7 @@ export const getAdmins = () => {
     return async (dispatch) => {
 
         dispatch({ type: 'GET_ADMINS' })
-        const response = await axios.get('http://localhost:5000/user/signup')
+        const response = await axios.get('https://react-socialogram.onrender.com/user/signup')
         if (response) {
             dispatch({ type: 'GET_ADMINS_COMPLETED', payload: response.data.data })
         }
