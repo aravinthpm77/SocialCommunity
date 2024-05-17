@@ -109,7 +109,7 @@ const HomeMainbar =()=>{
                         state.servicesData &&
                         state.servicesData.length > 0 ?
                         state.servicesData
-                            .sort((a, b) => a.price - b.price)
+                        .sort((a, b) => moment(b.postedOn).unix() - moment(a.postedOn).unix())
                             .filter(item => {
                                 return item.title.toLowerCase().includes(filter.toLowerCase()) || item.postedOn.toLowerCase().includes(filter.toLowerCase())
                             })
