@@ -5,12 +5,17 @@ import AllRoutes from './Routes'
 
 import { Provider } from "react-redux"
 import store from './store'
+import { Toaster, toast } from 'sonner'
+
+
 function App() {
 
   return (
     <div>
       <Provider store={store} >
+        
         <BrowserRouter>
+          <Toaster position="top-right" richColors  />
           <Navbar/>
           <AllRoutes/>
         </BrowserRouter>

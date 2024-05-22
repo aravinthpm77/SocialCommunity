@@ -2,6 +2,7 @@ import axios from 'axios'
 import {Link,useNavigate} from 'react-router-dom';
 import { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
+import { toast } from 'sonner';
 const Createpost = () =>{
     
     const User=useSelector((state)=>(state.currentUserReducer))
@@ -22,12 +23,12 @@ const Createpost = () =>{
 
     const handleClick = () => {
         if(User===null){
-            alert("Login or SignUp to Answer")
+            toast.warning("Login to Answer")
             navigate('/Auth')
         }
         else{
             if((!title && !image)||(!title && image)||(title && !image)){
-                alert('Server needs both title and image')
+                toast.error('Required both Title, Image')
             }
             else{
                 console.log(title,  image, 19)

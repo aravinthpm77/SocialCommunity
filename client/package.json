@@ -19,8 +19,10 @@
     "react-router-dom": "^6.14.0",
     "react-scripts": "5.0.1",
     "react-share": "^4.4.1",
+    "react-toastify": "^10.0.5",
     "redux": "^4.2.1",
     "redux-thunk": "^2.4.2",
+    "sonner": "^1.4.41",
     "web-vitals": "^2.1.4"
   },
   "scripts": {

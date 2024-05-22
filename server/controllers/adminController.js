@@ -55,8 +55,7 @@ module.exports.LoginAdmins = async(req,res) => {
             const ispasscrt = await bcrypt.compare(emailexists.password,password)
             if (ispasscrt === true){
                 return res.redirect('/home')
-                
-            }    
+                }    
             
             const _token =await jwt.sign({email:emailexists.email , id:emailexists._id},"test",{expiresIn:'1h'})
             return res.send({result:emailexists,_token })

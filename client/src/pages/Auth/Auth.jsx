@@ -7,6 +7,7 @@ import icon from '../../assets/socsalo.png'
 import icon2 from '../../assets/bg1.jpg'
 import './Auth.css'
 import { signup,login } from '../../action/auth'
+import { toast } from "sonner"
 
 const Auth =()=>{
     
@@ -20,6 +21,7 @@ const Auth =()=>{
     
 
     const handleSwitch=()=>{
+        console.log("Switch");
         setIsSignup(!isSignup)
     }
 
@@ -28,12 +30,13 @@ const Auth =()=>{
         if(isSignup){
             if(!name||!email || !password ){
                 alert("Enter Full Details to SignUP")
+                toast.error('Event has been created')
             }
             dispatch(signup({name,email,password},navigate))
         }
         else{
             if(!email || !password ){
-                alert("Enter Full Details to LogIn")
+                toast("Enter Full Details to LogIn")
             }
             dispatch(login({email,password },navigate))
         }
@@ -96,7 +99,7 @@ const Auth =()=>{
                     )}
                     <p className="footer">
                         {isSignup?'Already A Member ? ':"Create Account !"}
-                        <button type="button" className="handle-switch-btn" onClick={handleSwitch} >{isSignup?"Log In":"Sign Up"}</button>
+                        <button type="button" className="handle-switch-btn" onClick={handleSwitch} >{isSignup?"LogIn":"SignUp"}</button>
                     </p>
                 </form>
                 
